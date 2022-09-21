@@ -5,6 +5,17 @@ export default function Lists() {
   const[input, setInput] = React.useState('');
   const[tasks, setTasks] = React.useState([]);
 
+  React.useEffect(()=>{
+    const taskStorage = localStorage.getItem('@tarefa')    
+    if(taskStorage){
+      setTasks(JSON.parse(taskStorage))
+    }
+  },[]);
+
+  React.useEffect(()=>{
+    localStorage.setItem('@tarefa',JSON.stringify(tasks))
+  },[tasks]);
+
   function handleRegister (e){
     e.preventDefault();
     setTasks([...tasks, input])
