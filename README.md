@@ -1,2 +1,2 @@
-# Curso revisao de React
+# Revisão de React
 Reforçando os conceitos do React.
